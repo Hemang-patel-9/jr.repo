@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./index.css"; // Import the external stylesheet
+import "./index.css";
 
 const Spinner = () => (
   <div className="text-center">
@@ -23,7 +23,7 @@ const formatDate = (dateString) => {
 
 const NewsItems = (props) => (
   <div className="card mb-4">
-    <div style={{ height: '250px', overflow: 'hidden' }}>
+    <div style={{ height: '100%', overflow: 'hidden' }}>
       <img
         src={props.url}
         className="card-img-top"
@@ -117,7 +117,7 @@ const News = (props) => {
           <>
             <div className="row">
               {articles.map((article, index) => (
-                <div className="col-md-3" key={index}>
+                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={index}>
                   <NewsItems
                     url={article.urlToImage || dummyImage}
                     title={article.title || "News is not available"}
